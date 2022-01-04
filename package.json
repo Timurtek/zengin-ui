@@ -1,0 +1,70 @@
+{
+  "name": "zengin-ui",
+  "version": "0.0.0-development",
+  "main": "lib/bundle.cjs.js",
+  "module": "lib/bundle.esm.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@timurtek"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "@tailwindcss/typography": "^0.4.1",
+    "@types/react": "^17.0.38",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
+    "classnames": "^2.3.1",
+    "cssnano": "^5.0.14",
+    "cz-conventional-changelog": "^3.3.0",
+    "gh-pages": "^3.2.3",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "react-icons": "^4.3.1",
+    "rollup": "^2.62.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "semantic-release": "^18.0.1",
+    "tailwindcss": "^2.2.17",
+    "typescript": "^4.5.4"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "commit": "git-cz",
+    "acp": "git add . && npm run commit && git push",
+    "build-storybook": "build-storybook",
+    "rollup": "rollup -c",
+    "build:tailwind": "postcss src/css/base.css -o src/css/tailwind.css",
+    "prettier:fix": "npx prettier --write .",
+    "prebuild-library": "npm run build:tailwind && npm run prettier:fix",
+    "build-library": "npm run rollup && npm run copy-style-lib",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d storybook-static",
+    "copy-style-lib": "cp src/css/tailwind.css lib/tailwind.min.css",
+    "semantic-release": "semantic-release --branches main"
+  },
+  "workspaces": [
+    "timurtek"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Timurtek/zengin-ui.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
