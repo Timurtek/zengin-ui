@@ -27,9 +27,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
+          registry-url: "https://registry.npmjs.org"
       - run: npm ci
       - run: npm run build-library
       - run: npm run semantic-release
         env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}},
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}},
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}},
