@@ -30,7 +30,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm ci
       - run: npm run build-library
-      - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }},
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }},
