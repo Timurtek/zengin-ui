@@ -56,14 +56,8 @@ const Avatar = ({
   });
   const titleInitals = () => {
     let output = title ? title.trim().split(" ") : "Z";
-    console.log(
-      "Output",
-      output[0][0],
-      output[output.length - 1][0],
-      output.length > 1 && output[output.length - 1][0]
-    );
-    return `${output[0][0].trim()}${
-      output.length > 1 ? output[output.length - 1][0] : ""
+    return `${output[0][0].trim().toUpperCase()}${
+      output.length > 1 ? output[output.length - 1][0].toUpperCase() : ""
     }`;
   };
   return (
@@ -75,9 +69,7 @@ const Avatar = ({
           alt={title}
         />
       )}
-      {avatarType === "title" && (
-        <div className="w-full text-gray-200">{titleInitals()}</div>
-      )}
+      {avatarType === "title" && <div className="w-full">{titleInitals()}</div>}
     </div>
   );
 };
