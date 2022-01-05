@@ -65,7 +65,7 @@ export const NavigationPattern = ({ className }) => (
                 className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                 aria-current="page"
               >
-                Dashboard
+                Dashboard 1
               </a>
 
               <a
