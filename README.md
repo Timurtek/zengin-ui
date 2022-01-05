@@ -10,7 +10,7 @@ Figma documentation is linked to Tailwind config, and can be updated via Figma p
 Get started by installing the Zengin UI Library.
 
 ```
-    npm install --save-dev zengin-ui
+npm install --save-dev zengin-ui
 ```
 
 ## Design Resources
