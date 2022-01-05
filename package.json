@@ -53,7 +53,7 @@
     "predeploy": "npm run build-storybook",
     "deploy": "gh-pages -d storybook-static",
     "copy-style-lib": "cp src/css/tailwind.css lib/tailwind.min.css",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release --branches main"
   },
   "workspaces": [
     "timurtek"
