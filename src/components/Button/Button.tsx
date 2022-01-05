@@ -31,6 +31,10 @@ export interface ButtonProps {
    * Button disabled or not
    */
   loading?: boolean;
+  /**
+   * Button disabled or not
+   */
+  className?: string;
 }
 
 const Button = ({
@@ -41,6 +45,7 @@ const Button = ({
   leftIcon,
   rightIcon,
   loading = false,
+  className,
   ...otherProps
 }: ButtonProps) => {
   const buttonClassNames = classNames(
@@ -57,7 +62,8 @@ const Button = ({
       "px-8 py-4 text-lg font-medium": size === "large",
       "bg-gray-300 hover:bg-gray-300 text-gray-400 cursor-not-allowed":
         disabled,
-    }
+    },
+    className
   );
   return (
     <button

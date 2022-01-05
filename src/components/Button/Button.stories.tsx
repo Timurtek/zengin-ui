@@ -10,7 +10,16 @@ export default {
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => (
-  <Button {...args} leftIcon={<FaBeer />} rightIcon={<FaBeer />} />
+  <>
+    <Button {...args} />
+    <br />
+    <Button {...args} leftIcon={<FaBeer />} />
+    <br />
+    <Button {...args} rightIcon={<FaBeer />} />
+    <br />
+    <Button {...args} leftIcon={<FaBeer />} rightIcon={<FaBeer />} />
+    <br />
+  </>
 );
 
 // Reuse that template for creating different stories
