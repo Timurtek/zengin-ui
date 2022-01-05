@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@timurtek"
+    "access": "public"
   },
   "dependencies": {
     "react": "^17.0.2",
