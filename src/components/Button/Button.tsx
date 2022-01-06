@@ -32,7 +32,7 @@ export interface ButtonProps {
    */
   loading?: boolean;
   /**
-   * Button disabled or not
+   * Button custom class names
    */
   className?: string;
 }
