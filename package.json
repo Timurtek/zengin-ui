@@ -17,11 +17,15 @@
     "@babel/core": "^7.16.5",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
+    "@storybook/addon-a11y": "^6.4.9",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/react": "^6.4.9",
     "@tailwindcss/typography": "^0.4.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.4.0",
     "@types/react": "^17.0.38",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
@@ -29,6 +33,7 @@
     "cssnano": "^5.0.14",
     "cz-conventional-changelog": "^3.3.0",
     "gh-pages": "^3.2.3",
+    "jest": "^27.4.7",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "react-icons": "^4.3.1",
@@ -38,6 +43,7 @@
     "rollup-plugin-typescript2": "^0.31.1",
     "semantic-release": "^18.0.1",
     "tailwindcss": "^2.2.17",
+    "ts-jest": "^27.1.2",
     "typescript": "^4.5.4"
   },
   "scripts": {
@@ -53,7 +59,9 @@
     "predeploy": "npm run build-storybook",
     "deploy": "gh-pages -d storybook-static",
     "copy-style-lib": "cp src/css/tailwind.css lib/tailwind.min.css",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches main",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "workspaces": [
     "timurtek"
